@@ -51,6 +51,9 @@ function get_os_name() {
         fi
     fi
     OS_NAME=`echo $OS_NAME | sed -e 's/^"//' -e 's/"$//'`
+    if [[ $OS_NAME =~ ^"Oracle" ]] ; then
+        OS_NAME="OEL"
+    fi
 }
 
 function os_supported() {
